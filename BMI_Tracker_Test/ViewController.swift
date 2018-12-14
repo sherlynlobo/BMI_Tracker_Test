@@ -13,6 +13,9 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    var bmidata = 0.0
+    var weightdata = 0.0
+    var heightdata = 0.0
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var age: UITextField!
@@ -42,10 +45,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
 
+    @IBAction func donebutton(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "seque1", sender: self)
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        {
+            let bmi = Bmidata(entity: Bmidata.entity(), insertInto: context)
+            
+            bmi.theight = Double(heightdata)
+            bmi.tweight = Double(weightdata)
+            bmi.tbmi = Double(bmidata)
+            
+            
+            try? context.save()        }
+        
+    }
     @IBAction func CalculateBMI(_ sender: UIButton) {
         
         if weight.text != nil && height.text != nil, var weight1 = Double(weight.text!), var height1 = Double(height.text!) {
             self.view.endEditing(true)
+            heightdata = height1
+            weightdata = weight1
             //Calculating BMI using metric, so convert to metric first
             if !metricSwitch.isOn {
                 (weight1) *= 0.453592;
@@ -53,6 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             let BMI: Double = weight1 / (height1 * height1)
             let shortBMI = String(format: "%.2f", BMI)
+            bmidata = BMI
             var resultText = "Your BMI is \(shortBMI): "
             var descriptor : String?
             if(BMI < 16.0) { descriptor = "Severely Thin" }

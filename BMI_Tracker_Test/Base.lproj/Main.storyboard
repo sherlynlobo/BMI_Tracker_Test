@@ -135,7 +135,8 @@
                                     <color key="titleColor" red="0.03471823072" green="0.04143067055" blue="0.054766814720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="log-uL-VXW" kind="show" id="J2o-Fb-mK0"/>
+                                    <action selector="donebutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mH-H8-kac"/>
+                                    <segue destination="log-uL-VXW" kind="show" identifier="seque1" id="J2o-Fb-mK0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,9 +173,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-j9-i4O">
-                                <rect key="frame" x="16" y="42" width="46" height="30"/>
+                                <rect key="frame" x="0.0" y="42" width="62" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.63095038780000001" green="0.75636151439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.03471823072" green="0.04143067055" blue="0.054766814720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="k0w-kj-uuK"/>
                                 </connections>
@@ -184,6 +188,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPV-eN-o8a">
+                                <rect key="frame" x="303" y="42" width="72" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63095038780000001" green="0.75636151439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.03471823072" green="0.04143067055" blue="0.054766814720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fBh-qX-Fhy"/>
