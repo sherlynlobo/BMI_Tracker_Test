@@ -79,14 +79,37 @@ class ViewController: UIViewController {
                 }
             }
             if lastCalculationType == 1 && height.text != nil && !((height.text!).isEmpty) {
-                
+                //AreYouHealthy(nil)
             }
             else if lastCalculationType == 0 && height.text != nil && !((height.text!).isEmpty) && weight.text != nil && !((weight.text!).isEmpty) {
-                
+                //AreYouHealthy(nil)
             }
             height.placeholder = "Height(m)"
             weight.placeholder = "Weight(kg)"
         }
+        
+        else {
+            //If text is already there, convert it to imperial
+            if height.text != nil && !((height.text!).isEmpty) {
+                if let heightVal = Double(height.text!) {
+                    height.text = String(format: "%.2f", heightVal / 0.0254)
+                }
+            }
+            if weight.text != nil && !((weight.text!).isEmpty) {
+                if let weightVal = Double(weight.text!) {
+                    weight.text = String(format: "%.2f", weightVal / 0.453592)
+                }
+            }
+            if lastCalculationType == 1 && height.text != nil && !((height.text!).isEmpty) {
+                //AreYouHealthy(nil)
+            }
+            else if lastCalculationType == 0 && height.text != nil && !((height.text!).isEmpty) && weight.text != nil && !((weight.text!).isEmpty) {
+                //AreYouHealthy(nil)
+            }
+            height.placeholder = "Height(in)"
+            weight.placeholder = "Weight(lbs)"
+        }
+
     }
     
     
