@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UITextField!
     
     @IBOutlet weak var metricSwitch: UISwitch!
+    var lastCalculationType: Int? //0 if BMICalculate, 1 if AreYouHealthy Calculate
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,39 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-
+    @IBAction func CalculateBMI(_ sender: UIButton) {
+        
+        if weight.text != nil && height.text != nil, var weight1 = Double(weight.text!), var height1 = Double(height.text!) {
+            self.view.endEditing(true)
+            //Calculating BMI using metric, so convert to metric first
+            if !metricSwitch.isOn {
+                (weight1) *= 0.453592;
+                (height1) *= 0.0254;
+            }
+            let BMI: Double = weight1 / (height1 * height1)
+            let shortBMI = String(format: "%.2f", BMI)
+            var resultText = "Your BMI is \(shortBMI): "
+            var descriptor : String?
+            if(BMI < 16.0) { descriptor = "Severely Thin" }
+            else if(BMI < 16.99) { descriptor = "Moderately Thin" }
+            else if(BMI < 18.49) { descriptor = "Slightly Thin" }
+            else if(BMI < 24.99) { descriptor = "Normal" }
+            else if(BMI < 29.99) { descriptor = "Overweight" }
+            else if(BMI < 34.99) { descriptor = "Obese Class I" }
+            else if(BMI < 39.99) { descriptor = "Obese Class II" }
+            else { descriptor = "Obese Class III" }
+            resultText += descriptor!
+            print(resultText)
+            resultLabel.text = resultText
+            resultLabel.isHidden = false
+            lastCalculationType = 0
+        }
+    }
+    
+    @IBAction func AreYouHealthy(_ sender: UIButton) {
+    }
+    
+    
+    
 }
 

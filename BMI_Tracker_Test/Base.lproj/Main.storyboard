@@ -113,6 +113,9 @@
                                 <state key="normal" title="Calculate BMI">
                                     <color key="titleColor" red="0.0084073604060913576" green="0.0051267300437306184" blue="0.0042651908714633514" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="CalculateBMI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wRN-dx-zIo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-hY-uC7">
                                 <rect key="frame" x="165" y="610" width="80" height="30"/>
@@ -132,6 +135,9 @@
                                 <state key="normal" title="Are you Heathy?">
                                     <color key="titleColor" red="0.03471823072" green="0.04143067055" blue="0.054766814720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="AreYouHealthy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRf-BX-bKC"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-Kg-46r">
                                 <rect key="frame" x="51" y="475" width="293" height="30"/>
