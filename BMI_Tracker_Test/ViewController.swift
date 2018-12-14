@@ -4,7 +4,10 @@
 //
 //  Created by Sherlyn Lobo on 2018-12-13.
 //  Copyright © 2018 Sherlyn Lobo. All rights reserved.
-//
+// Name : Sherlyn Lobo
+// Student ID : 301013071
+// BMI Tracker
+// Date : 13th December 2018
 
 import UIKit
 
@@ -22,7 +25,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var metricSwitch: UISwitch!
     var lastCalculationType: Int? //0 if BMICalculate, 1 if AreYouHealthy Calculate
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +63,24 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func AreYouHealthy(_ sender: UIButton) {
+    @IBAction func AreYouHealthy(_ sender: UIButton?) {
+        
+        if height.text != nil, var height1 = Double(height.text!) {
+            if !metricSwitch.isOn { height1 *= 0.0254; }
+            var weight1 = 21.0*(height1 * height1)
+            var resultText = "For a healthy BMI of 21, aim for a weight of "
+            var prettyWeight: String
+            if !metricSwitch.isOn {
+                weight1 /= 0.453592
+                prettyWeight = String(format:"%.2f lbs.", weight)
+            }
+            else { prettyWeight = String(format:"%.2f kg.", weight) }
+            resultText += prettyWeight
+            print(resultText)
+            resultLabel.text = resultText
+            resultLabel.isHidden = false
+            lastCalculationType = 1
+        }
     }
     
     @IBAction func metricSwitchChanged(_ sender: UISwitch) {
@@ -79,10 +98,10 @@ class ViewController: UIViewController {
                 }
             }
             if lastCalculationType == 1 && height.text != nil && !((height.text!).isEmpty) {
-                //AreYouHealthy(nil)
+                AreYouHealthy(nil)
             }
             else if lastCalculationType == 0 && height.text != nil && !((height.text!).isEmpty) && weight.text != nil && !((weight.text!).isEmpty) {
-                //AreYouHealthy(nil)
+                AreYouHealthy(nil)
             }
             height.placeholder = "Height(m)"
             weight.placeholder = "Weight(kg)"
@@ -101,10 +120,10 @@ class ViewController: UIViewController {
                 }
             }
             if lastCalculationType == 1 && height.text != nil && !((height.text!).isEmpty) {
-                //AreYouHealthy(nil)
+                AreYouHealthy(nil)
             }
             else if lastCalculationType == 0 && height.text != nil && !((height.text!).isEmpty) && weight.text != nil && !((weight.text!).isEmpty) {
-                //AreYouHealthy(nil)
+                AreYouHealthy(nil)
             }
             height.placeholder = "Height(in)"
             weight.placeholder = "Weight(lbs)"
