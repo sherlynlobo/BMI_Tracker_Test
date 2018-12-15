@@ -17,14 +17,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var weightdata = 0.0
     var heightdata = 0.0
     
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var age: UITextField!
+
     @IBOutlet weak var gender: UITextField!
     
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var height: UITextField!
     
     @IBOutlet weak var resultLabel: UITextField!
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var age: UITextField!
+    
     
     @IBOutlet weak var metricSwitch: UISwitch!
     var lastCalculationType: Int? //0 if BMICalculate, 1 if AreYouHealthy Calculate
@@ -44,6 +47,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    override func viewWillAppear(_ animated: Bool)
+        
+    {
+        if let x = UserDefaults.standard.object(forKey: "myName") as? String
+        {
+            name.text = x
+        }
+        if let y = UserDefaults.standard.object(forKey: "myAge") as? String
+        {
+            age.text = y
+            
+            
+        }
+        if let a = UserDefaults.standard.object(forKey: "myGender") as? String
+        {
+            gender.text = a
+        }
+        if let b = UserDefaults.standard.object(forKey: "myWeight") as? String
+        {
+            weight.text = b
+        }
+        if let c = UserDefaults.standard.object(forKey: "myHeight") as? String
+        {
+            height.text = c
+        }
+
+        
+    }
 
     @IBAction func donebutton(_ sender: UIButton) {
         
@@ -57,7 +89,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             bmi.tbmi = Double(bmidata)
             
             
-            try? context.save()        }
+            try? context.save()
+            
+            let combo = name.text!
+            UserDefaults.standard.set(combo, forKey: "myName")
+            
+            let combo1 = age.text!
+            UserDefaults.standard.set(combo1, forKey: "myAge")
+            let combo2 = gender.text!
+            UserDefaults.standard.set(combo2, forKey: "myGender")
+            let combo3 = weight.text!
+            UserDefaults.standard.set(combo3, forKey: "myWeight")
+            let combo4 = height.text!
+            UserDefaults.standard.set(combo4, forKey: "myHeight")
+        }
         
     }
     @IBAction func CalculateBMI(_ sender: UIButton) {

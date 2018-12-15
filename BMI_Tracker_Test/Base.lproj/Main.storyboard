@@ -148,7 +148,7 @@
                         <outlet property="gender" destination="BCa-zM-Nkc" id="5VB-54-8QZ"/>
                         <outlet property="height" destination="zrF-YC-A0H" id="Jr9-hy-dnO"/>
                         <outlet property="metricSwitch" destination="dI7-5d-5ZS" id="nF6-Zd-7bY"/>
-                        <outlet property="name" destination="NyL-FQ-n6n" id="IPD-gb-OvK"/>
+                        <outlet property="name" destination="NyL-FQ-n6n" id="iqN-tf-AIB"/>
                         <outlet property="resultLabel" destination="fIp-Kg-46r" id="aPX-m7-ZaW"/>
                         <outlet property="weight" destination="cKt-zj-evR" id="OGm-8z-IkI"/>
                     </connections>
