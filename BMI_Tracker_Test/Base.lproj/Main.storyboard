@@ -128,7 +128,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-hY-uC7">
-                                <rect key="frame" x="165" y="570" width="80" height="30"/>
+                                <rect key="frame" x="264" y="570" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.63095038775061352" green="0.7563615144014475" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Done">
@@ -137,6 +137,17 @@
                                 <connections>
                                     <action selector="donebutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mH-H8-kac"/>
                                     <segue destination="log-uL-VXW" kind="show" identifier="seque1" id="J2o-Fb-mK0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHj-Ir-k1B">
+                                <rect key="frame" x="51" y="570" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.63095038780000001" green="0.75636151439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.03471823072" green="0.04143067055" blue="0.054766814720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D9m-zX-uLG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,6 +162,19 @@
                         <outlet property="name" destination="NyL-FQ-n6n" id="iqN-tf-AIB"/>
                         <outlet property="resultLabel" destination="fIp-Kg-46r" id="aPX-m7-ZaW"/>
                         <outlet property="weight" destination="cKt-zj-evR" id="OGm-8z-IkI"/>
+                        <outletCollection property="Items" destination="NyL-FQ-n6n" collectionClass="NSMutableArray" id="t9D-Cd-0cb"/>
+                        <outletCollection property="Items" destination="NyL-FQ-n6n" collectionClass="NSMutableArray" id="UcU-ff-8PJ"/>
+                        <outletCollection property="Items" destination="ZL6-vu-JpY" collectionClass="NSMutableArray" id="Q4I-Qh-pDv"/>
+                        <outletCollection property="Items" destination="BCa-zM-Nkc" collectionClass="NSMutableArray" id="7eQ-Hq-PWm"/>
+                        <outletCollection property="Items" destination="cKt-zj-evR" collectionClass="NSMutableArray" id="Rzw-qn-QTd"/>
+                        <outletCollection property="Items" destination="zrF-YC-A0H" collectionClass="NSMutableArray" id="Uao-D8-oTV"/>
+                        <outletCollection property="values" destination="NyL-FQ-n6n" collectionClass="NSMutableArray" id="mnv-Bo-Neh"/>
+                        <outletCollection property="values" destination="ZL6-vu-JpY" collectionClass="NSMutableArray" id="k0e-on-aR0"/>
+                        <outletCollection property="values" destination="NyL-FQ-n6n" collectionClass="NSMutableArray" id="d3e-1z-lF7"/>
+                        <outletCollection property="values" destination="ZL6-vu-JpY" collectionClass="NSMutableArray" id="E6g-SQ-UsB"/>
+                        <outletCollection property="values" destination="BCa-zM-Nkc" collectionClass="NSMutableArray" id="FUE-gh-gmD"/>
+                        <outletCollection property="values" destination="cKt-zj-evR" collectionClass="NSMutableArray" id="tLe-We-Ftd"/>
+                        <outletCollection property="values" destination="zrF-YC-A0H" collectionClass="NSMutableArray" id="JTI-ZE-o8i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -173,7 +197,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-j9-i4O">
-                                <rect key="frame" x="0.0" y="42" width="62" height="55"/>
+                                <rect key="frame" x="0.0" y="42" width="82" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.63095038780000001" green="0.75636151439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Back">
@@ -189,10 +213,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPV-eN-o8a">
-                                <rect key="frame" x="303" y="42" width="72" height="53"/>
+                                <rect key="frame" x="325" y="42" width="94" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.63095038780000001" green="0.75636151439999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="0.03471823072" green="0.04143067055" blue="0.054766814720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>

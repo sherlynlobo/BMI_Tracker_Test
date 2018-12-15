@@ -17,7 +17,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var weightdata = 0.0
     var heightdata = 0.0
     
-
+    @IBOutlet var Items: [UITextField]!
+    
     @IBOutlet weak var gender: UITextField!
     
     @IBOutlet weak var weight: UITextField!
@@ -29,8 +30,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var age: UITextField!
     
     
+    @IBAction func reset(_ sender: UIButton) {
+        
+        values.forEach ({ $0.text=""})
+
+    }
     @IBOutlet weak var metricSwitch: UISwitch!
     var lastCalculationType: Int? //0 if BMICalculate, 1 if AreYouHealthy Calculate
+
+    
+    @IBOutlet var values: [UITextField]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
