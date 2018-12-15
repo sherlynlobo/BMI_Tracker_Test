@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BMI_Splash" translatesAutoresizingMaskIntoConstraints="NO" id="n6E-CW-4sJ">
-                                <rect key="frame" x="0.0" y="144" width="375" height="378"/>
+                                <rect key="frame" x="16" y="144" width="375" height="378"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
